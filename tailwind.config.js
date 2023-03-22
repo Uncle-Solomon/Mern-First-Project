@@ -2,7 +2,19 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: "#1565db",
+        dark: {
+          hard: "#0d2436",
+          soft: "#183b56",
+        },
+      },
+      fontFamily: {
+        opensans: ["'Open Sans'", "sans-serif"],
+        roboto: ["'Roboto'", "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
