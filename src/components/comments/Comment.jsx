@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiEdit, FiMessageSquare, FiTrash } from "react-icons/fi";
 
 import { images } from "../../constants";
 
-const Comment = ({ comment, loggedInUserId }) => {
+const Comment = ({
+  comment,
+  loggedInUserId,
+  affectedComment,
+  setAffectedComment,
+}) => {
   const isUserLogin = Boolean(loggedInUserId);
   const commentBelongsToUser = Boolean(loggedInUserId === comment.user._id);
+  //   const isReplying =
+  //     affectedComment &&
+  //     affectedComment.type === "replying" &&
+  //     affectedComment._id === comment._id;
+
   return (
     <div className="flex flex-nowrap items-start gap-x-3 bg-[#f2f4f5] p-3 rounded-lg">
       <img
@@ -30,7 +40,13 @@ const Comment = ({ comment, loggedInUserId }) => {
         </p>
         <div className="flex items-center gap-x-3 text-dark-light font-roboto text-sm mt-3 mb-3">
           {isUserLogin && (
-            <button className="flex items-center space-x-2">
+            <button
+              className="flex items-center space-x-2"
+              onClick={setAffectedComment({
+                type: "replying",
+                _id: comment._id,
+              })}
+            >
               <FiMessageSquare className="w-4 h-auto" />
               <span>Reply</span>
             </button>

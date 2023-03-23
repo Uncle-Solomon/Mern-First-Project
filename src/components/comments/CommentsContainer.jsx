@@ -7,15 +7,16 @@ const CommentsContainer = ({ className, loggedInUserId }) => {
   const [comments, setComments] = useState([]);
   const mainComments = comments.filter((comment) => comment.parent === null);
 
-  console.log(comments);
+  const [affectedComment, setAffectedComment] = useState(null);
+
+  //   console.log(comments);
 
   //Come back to this Solomon!!!
   useEffect(() => {
-    const getComment = async () => {
+    (async () => {
       const commentData = await getCommentsData();
       setComments(commentData);
-    };
-    getComment();
+    })();
   }, []);
 
   const addCommentHandler = (value, parent = null, replyOnUser = null) => {
@@ -44,7 +45,12 @@ const CommentsContainer = ({ className, loggedInUserId }) => {
       />
       <div className="space-y-4 mt-8">
         {mainComments.map((comment) => (
-          <Comment comment={comment} loggedInUserId={loggedInUserId} />
+          <Comment
+            comment={comment}
+            loggedInUserId={loggedInUserId}
+            affectedComment={affectedComment}
+            setAffectedComment={setAffectedComment}
+          />
         ))}
       </div>
     </div>
