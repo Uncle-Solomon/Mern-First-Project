@@ -40,6 +40,16 @@ const postsData = [
   },
 ];
 
+const tagsData = [
+  "Medical",
+  "Lifestyle",
+  "Learn",
+  "Healthy",
+  "Food",
+  "Diet",
+  "Education",
+];
+
 const ArticleDetailPage = () => {
   return (
     <MainLayout>
@@ -70,7 +80,11 @@ const ArticleDetailPage = () => {
             </p>
           </div>
         </article>
-        <SuggestedPosts header="Latest Article" posts={postsData} />
+        <SuggestedPosts
+          header="Latest Article"
+          posts={postsData}
+          tags={tagsData}
+        />
       </section>
     </MainLayout>
   );
