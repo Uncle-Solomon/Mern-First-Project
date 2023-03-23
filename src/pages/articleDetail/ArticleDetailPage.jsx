@@ -20,6 +20,24 @@ const postsData = [
     title: "Help Children get better education",
     createdAt: "2023-01-28T15:35:53.607+0000",
   },
+  {
+    _id: "2",
+    image: images.Post1,
+    title: "Help Children get better education",
+    createdAt: "2023-01-28T15:35:53.607+0000",
+  },
+  {
+    _id: "3",
+    image: images.Post1,
+    title: "Help Children get better education",
+    createdAt: "2023-01-28T15:35:53.607+0000",
+  },
+  {
+    _id: "4",
+    image: images.Post1,
+    title: "Help Children get better education",
+    createdAt: "2023-01-28T15:35:53.607+0000",
+  },
 ];
 
 const ArticleDetailPage = () => {
@@ -52,7 +70,7 @@ const ArticleDetailPage = () => {
             </p>
           </div>
         </article>
-        <SuggestedPosts header="Latest Article" />
+        <SuggestedPosts header="Latest Article" posts={postsData} />
       </section>
     </MainLayout>
   );
