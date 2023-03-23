@@ -66,7 +66,7 @@ const Header = () => {
   };
   return (
     <div>
-      <section className="fixed top-0 left-0 right-0 z-50 bg-white">
+      <section className="sticky top-0 left-0 right-0 z-50 bg-white">
         <header className="container mx-auto px-5 py-5 flex justify-between items-center">
           <div>
             <img src={images.Logo} alt="logo" className="w-16" />
