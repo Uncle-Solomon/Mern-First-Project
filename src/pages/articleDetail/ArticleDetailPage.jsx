@@ -68,11 +68,40 @@ const ArticleDetailPage = () => {
             Help children get better education.
           </h1>
           <div className="mt-4 text-dark-soft">
-            <p className="leading-7">
+            <p className="leading-7  my-5 text-justify">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente
               tempora eaque molestias repellat quos, tempore neque impedit
               inventore adipisci ad, reprehenderit sed mollitia aut similique
-              perspiciatis dolor voluptatem accusantium? Nisi.
+              perspiciatis dolor voluptatem accusantium? Nisi. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Fugit vitae officia
+              veritatis. Tempore, neque eaque eos iure voluptas, saepe natus
+              fuga rem, temporibus ipsam quas quaerat ullam cum ea officiis.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+              nostrum facere praesentium eaque recusandae sed adipisci dicta
+              quisquam porro placeat necessitatibus distinctio fuga harum et,
+              voluptate earum, similique voluptates ipsum.
+            </p>
+            <p className="leading-7 my-5 text-justify">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente
+              tempora eaque molestias repellat quos, tempore neque impedit
+              inventore adipisci ad, reprehenderit sed mollitia aut similique
+              perspiciatis dolor voluptatem accusantium? Nisi. Lorem ipsum dolor
+              sit, amet consectetur adipisicing elit. Quae rem eum illo facere
+              ab, officia pariatur amet dolores? Magni omnis fugiat aliquid odit
+              adipisci ipsa porro laboriosam molestiae explicabo ducimus.
+            </p>
+            <p className="leading-7  my-5 text-justify">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente
+              tempora eaque molestias repellat quos, tempore neque impedit
+              inventore adipisci ad, reprehenderit sed mollitia aut similique
+              perspiciatis dolor voluptatem accusantium? Nisi. Lorem ipsum dolor
+              sit amet consectetur adipisicing elit. Non quos cumque deserunt
+              ratione eum exercitationem saepe aliquid fugiat. Necessitatibus
+              autem cum sequi commodi eum temporibus vitae odio pariatur, sit
+              odit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Laudantium placeat obcaecati error temporibus ex est quis dolores
+              dolore praesentium expedita molestiae omnis unde iure quaerat,
+              inventore nostrum eos quibusdam autem!
             </p>
           </div>
         </article>
