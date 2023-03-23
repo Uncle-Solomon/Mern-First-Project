@@ -105,7 +105,7 @@ const ArticleDetailPage = () => {
               inventore nostrum eos quibusdam autem!
             </p>
           </div>
-          <CommentsContainer className="mt-10" />
+          <CommentsContainer className="mt-10" loggedInUserId="a" />
         </article>
         <SuggestedPosts
           header="Latest Article"
