@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import BreadCrumbs from "../../components/BreadCrumbs";
+import CommentsContainer from "../../components/comments/CommentsContainer";
 import MainLayout from "../../components/MainLayout";
 
 import { images } from "../../constants";
@@ -104,6 +105,7 @@ const ArticleDetailPage = () => {
               inventore nostrum eos quibusdam autem!
             </p>
           </div>
+          <CommentsContainer className="mt-10" />
         </article>
         <SuggestedPosts
           header="Latest Article"
