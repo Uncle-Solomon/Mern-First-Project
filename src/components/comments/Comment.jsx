@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FiEdit, FiMessageSquare, FiTrash } from "react-icons/fi";
 
 import { images } from "../../constants";
