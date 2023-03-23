@@ -24,7 +24,7 @@ const ArticleCard = ({ className }) => {
           <div className="flex items-center gap-x-2 md:gap-x-2.5">
             <img
               src={images.PostProfile}
-              alt="Profile Image"
+              alt="Profile"
               className="w-9 h-9 md:w-10 md:h-10"
             />
             <div className="flex flex-col">
