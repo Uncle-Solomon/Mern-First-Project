@@ -9,7 +9,7 @@ const SuggestedPosts = ({ className, header, posts = [], tags }) => {
       <h2 className="font-roboto font-medium text-dark-hard md:text-xl">
         {header}
       </h2>
-      <div className="grid gap-y-5 mt-5 md:grid-cols-2 md:gap-x-5">
+      <div className="grid gap-y-5 mt-5 md:grid-cols-2 md:gap-x-5 lg:grid-cols-1">
         {posts.map((item) => (
           <div
             key={item._id}
@@ -21,7 +21,7 @@ const SuggestedPosts = ({ className, header, posts = [], tags }) => {
               alt="laptop"
             />
             <div className="text-sm font-roboto text-dark-hard font-medium">
-              <h3 className="text-sm font-roboto text-dark-hard font-medium md:text-base">
+              <h3 className="text-sm font-roboto text-dark-hard font-medium md:text-base lg:text-lg">
                 {item.title}
               </h3>
               <span className="text-xs opacity-60">

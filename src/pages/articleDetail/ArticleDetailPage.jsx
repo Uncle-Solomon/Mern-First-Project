@@ -57,11 +57,7 @@ const ArticleDetailPage = () => {
         <article className="flex-1">
           <BreadCrumbs data={BreadCrumbsData} />
 
-          <img
-            src={images.Post1}
-            className="rounded-xl w-full"
-            alt="A Post picture"
-          />
+          <img src={images.Post1} className="rounded-xl w-full" alt="A Post" />
           <Link
             to="/blog?category=selectedCategory"
             className="text-primary text-sm font-roboto inline-block mt-4 md:text-base"
