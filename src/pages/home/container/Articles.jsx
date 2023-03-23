@@ -10,7 +10,10 @@ const Articles = () => {
         <ArticleCard className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-21px)]" />
         <ArticleCard className="w-full md:w-[calc(50%-20px)] lg:w-[calc(33.33%-21px)]" />
       </div>
-      <Link className="mx-auto flex items-center gap-x-2 font-bold text-primary border-2 border-primary px-6 py-3 rounded-lg">
+      <Link
+        to="/blog/1"
+        className="mx-auto flex items-center gap-x-2 font-bold text-primary border-2 border-primary px-6 py-3 rounded-lg"
+      >
         <span className="">More Articles</span>
         <FaArrowRight className="w-3 h-3" />
       </Link>
