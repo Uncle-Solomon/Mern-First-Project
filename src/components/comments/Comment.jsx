@@ -1,21 +1,32 @@
 import React from "react";
-import { FiEdit, FiMessageSquare, FiTrash } from "react-icons/fi";
-
 import { images } from "../../constants";
+import { FiEdit, FiMessageSquare, FiTrash } from "react-icons/fi";
+import CommentForm from "./CommentForm";
 
 const Comment = ({
   comment,
   loggedInUserId,
   affectedComment,
   setAffectedComment,
+  addComment,
+  parentId = null,
+  updateComment,
+  deleteComment,
 }) => {
-  const isUserLogin = Boolean(loggedInUserId);
-  const commentBelongsToUser = Boolean(loggedInUserId === comment.user._id);
-  //   const isReplying =
-  //     affectedComment &&
-  //     affectedComment.type === "replying" &&
-  //     affectedComment._id === comment._id;
+  const isUserLoggedIn = Boolean(loggedInUserId);
+  const commentBelongsToUser = loggedInUserId === comment.user._id;
+  const isReplying =
+    affectedComment &&
+    affectedComment.type === "replying" &&
+    affectedComment._id === comment._id;
 
+  const isEditing =
+    affectedComment &&
+    affectedComment.type === "editing" &&
+    affectedComment._id === comment._id;
+
+  const repliedCommentId = parentId ? parentId : comment._id;
+  const replyOnUserId = comment.user._id;
   return (
     <div className="flex flex-nowrap items-start gap-x-3 bg-[#f2f4f5] p-3 rounded-lg">
       <img
@@ -35,17 +46,27 @@ const Comment = ({
             hour: "2-digit",
           })}
         </span>
-        <p className="font-opensans mt-[10px] text-dark-light">
-          {comment.desc}
-        </p>
-        <div className="flex items-center gap-x-3 text-dark-light font-roboto text-sm mt-3 mb-3">
-          {isUserLogin && (
+        {!isEditing && (
+          <p className="font-opensans mt-[10px] text-dark-light">
+            {comment.desc}
+          </p>
+        )}
+
+        {isEditing && (
+          <CommentForm
+            btnLabel="Update"
+            formSubmitHandler={(value) => updateComment(value, comment._id)}
+            formCancelHandler={() => setAffectedComment(null)}
+            initialText={comment.desc}
+          />
+        )}
+        <div className="flex items-center gap-x-2 text-dark-light font-roboto text-sm mt-3 mb-3">
+          {isUserLoggedIn && (
             <button
               className="flex items-center space-x-2"
-              onClick={setAffectedComment({
-                type: "replying",
-                _id: comment._id,
-              })}
+              onClick={() =>
+                setAffectedComment({ type: "replying", _id: comment._id })
+              }
             >
               <FiMessageSquare className="w-4 h-auto" />
               <span>Reply</span>
@@ -54,17 +75,34 @@ const Comment = ({
 
           {commentBelongsToUser && (
             <>
-              <button className="flex items-center space-x-2">
+              <button
+                className="flex items-center space-x-2"
+                onClick={() =>
+                  setAffectedComment({ type: "editing", _id: comment._id })
+                }
+              >
                 <FiEdit className="w-4 h-auto" />
                 <span>Edit</span>
               </button>
-              <button className="flex items-center space-x-2">
+              <button
+                className="flex items-center space-x-2"
+                onClick={() => deleteComment(comment._id)}
+              >
                 <FiTrash className="w-4 h-auto" />
                 <span>Delete</span>
-              </button>{" "}
+              </button>
             </>
           )}
         </div>
+        {isReplying && (
+          <CommentForm
+            btnLabel="Reply"
+            formSubmitHandler={(value) =>
+              addComment(value, repliedCommentId, replyOnUserId)
+            }
+            formCancelHandler={() => setAffectedComment(null)}
+          />
+        )}
       </div>
     </div>
   );
