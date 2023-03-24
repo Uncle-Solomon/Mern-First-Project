@@ -23,18 +23,18 @@ const CommentForm = ({
           onChange={(e) => setValue(e.target.value)}
           defaultValue={initialText}
         />
-        <div className="flex items-center gap-x-2 pt-2">
+        <div className="flex flex-col-reverse gap-y-2 items-center gap-x-2 pt-2 min-[420px]:flex-row">
           {formCancelHandler && (
             <button
               onClick={formCancelHandler}
-              className="px-6 py-2.5 rounded-lg border border-red-500 text-red-500 mt-2"
+              className="px-6 py-2.5 rounded-lg border border-red-500 text-red-500 mt-2 max-[420px]:my-1 max-[420px]:px-4 max-[420px]:py-1.5 "
             >
               Cancel
             </button>
           )}
           <button
             type="submit"
-            className="px-6 py-2.5 rounded-lg bg-primary font-semibold text-white mt-2"
+            className="px-6 py-2.5 rounded-lg bg-primary font-semibold text-white mt-2 max-[420px]:my-1 max-[420px]:px-4 max-[420px]:py-1.5"
           >
             {btnLabel}
           </button>
